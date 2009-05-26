@@ -1,0 +1,19 @@
+MultiTouchJ-MoteJ
+
+MultiTouchJ-MoteJ is licensed under the Apache License, v. 2.0. Other software
+included in this distribution is provided under other licenses as listed in the
+bottom of this page.
+
+
+Other Software
+
+Following is the list of other software and distributed and utilized by
+MultiTouchJ-MoteJ:
+
+* motej
+* BlueCove
+* Commons Logging
+* JUnit
+
+Refer to Documentation/ThirdParty for the other software distributed with
+MultiTouchJ-MoteJ.
