@@ -61,8 +61,11 @@ public class MoteFinderHandler implements MoteFinderListener {
             
             try {
                 Thread.sleep(100);
-            } catch(Exception exception) {}
+            } catch(Exception exception) {
+                log.error("Failed to sleep!", exception);
+            }
         }
+        
         moteFinder.stopDiscovery();
         
         return mote;

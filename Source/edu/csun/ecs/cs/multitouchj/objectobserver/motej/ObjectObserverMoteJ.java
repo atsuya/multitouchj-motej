@@ -102,9 +102,9 @@ public class ObjectObserverMoteJ extends ObjectObserver implements IrCameraListe
             
             try {
                 mote = moteFinderHandler.findMote();
-                mote.setReportMode(ReportModeRequest.DATA_REPORT_0x36);
                 mote.addIrCameraListener(this);
                 mote.enableIrCamera();
+                mote.setReportMode(ReportModeRequest.DATA_REPORT_0x36);
             } catch(Exception exception) {
                 log.error("Failed to detect Wiimote.", exception);
                 throw new Exception("Failed to detect Wiimote.");
@@ -120,10 +120,12 @@ public class ObjectObserverMoteJ extends ObjectObserver implements IrCameraListe
     @Override
     public void stop() throws Exception {
         if(isStarted()) {
+            mote.setReportMode(ReportModeRequest.DATA_REPORT_0x30);
             mote.disableIrCamera();
             mote.removeIrCameraListener(this);
-            mote.setReportMode(ReportModeRequest.DATA_REPORT_0x30);
             mote.disconnect();
+            
+            setStarted(false);
         }
     }
 }
